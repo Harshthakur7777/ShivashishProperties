@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Shivashish Properties</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="/img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="/lib/animate/animate.min.css" rel="stylesheet">
+    <link href="/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="/style.css" rel="stylesheet">
+    <style>
+        body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 10px;
+    padding: 10px;
+}
+
+.grid-item {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    box-sizing: border-box; /* Ensure padding and border are included in the width and height */
+}
+
+.grid-item img {
+    width: 100%;
+    height: auto;
+    max-width: 600px;
+    max-height: 600px;
+    object-fit: cover;
+}
+
+@media (max-width: 1200px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+        gap: 5px;
+        padding: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .grid-item img {
+        width: 100%;
+        height: auto;
+    }
+}
+.table-container {
+    margin: 20px auto;
+    width: 90%;
+    max-width: 800px;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff; /* White background for the table */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border: 1px solid #dddddd;
+}
+
+th {
+    background-color: #1e90ff; /* Blue background for headers */
+    color: #ffffff; /* White text color for headers */
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f0f8ff; /* Light blue background for even rows */
+}
+
+tbody tr:hover {
+    background-color: #add8e6; /* Light blue hover effect */
+}
+
+th:nth-child(1), td:nth-child(1) {
+    width: 33%; /* First column takes 1/3 of the table width */
+}
+
+th:nth-child(2), td:nth-child(2) {
+    width: 67%; /* Second column takes 2/3 of the table width */
+}
+
+@media (max-width: 768px) {
+    th, td {
+        padding: 10px 12px; /* Adjust padding on smaller screens */
+    }
+
+    th:nth-child(1), td:nth-child(1) {
+        width: 35%; /* Adjust column width slightly on smaller screens */
+    }
+
+    th:nth-child(2), td:nth-child(2) {
+        width: 65%;
+    }
+}
+
+@media (max-width: 480px) {
+    table, thead, tbody, th, td, tr {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    tr {
+        display: flex; /* Use flexbox for rows on small screens */
+        flex-direction: row;
+    }
+
+    th, td {
+        width: auto;
+        flex: 1;
+        padding: 10px 12px;
+        text-align: left;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f0f8ff;
+    }
+
+    tr:hover {
+        background-color: #add8e6;
+    }
+}
+    </style>
+</head>
+
+<body>
+
+    <div class="container-xxl bg-white p-0">
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+        
+        <!-- Navbar Start -->
+        <%- include("navbar.ejs") %>
+        <!-- Navbar End -->
+        <!--body start-->    
+        <div class="grid-container" style="text-align: center;">
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Property Name</th>
+                            <th><%= property.Name %></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>sale/rent/buy</td>
+                            <td><%= property.SRB %></td>
+                        </tr>
+                        <tr>
+                            <td>Price</td>
+                            <td><%= property.price %> Rs</td>
+                        </tr>
+                        <tr>
+                            <td>Propery type</td>
+                            <td><%= property.type %></td>
+                        </tr>
+                        <tr>
+                            <td>Location</td>
+                            <td><%= property.location %></td>
+                        </tr>
+                        <tr>
+                            <td>Size</td>
+                            <td><%= property.size %></td>
+                        </tr>
+                       
+                        <tr>
+                            <td>Additional Information</td>
+                            <td>Nothing</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <% for(let i=0; i<property.images.length; i++){ %>
+                <div class="grid-item">
+                    <img src="<%= property.images[i] %>" alt="Image 2">
+                </div>
+            <% } %>
+        </div>
+        <!--body end-->    
+
+        <%- include('call.ejs') %>
+        <!-- Footer Start -->
+        <%- include("footer.ejs") %>
+        <!-- Footer End -->
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    </div>
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/lib/wow/wow.min.js"></script>
+    <script src="/lib/easing/easing.min.js"></script>
+    <script src="/lib/waypoints/waypoints.min.js"></script>
+    <script src="/lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="/main.js"></script>
+</body>
+
+</html>

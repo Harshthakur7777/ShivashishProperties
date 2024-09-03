@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        .formbox
+        {   
+            text-align: center;
+            padding: 5px;
+            margin: 5px;
+        }
+        input,select{
+            font-size: large;
+            border-radius: 5%;
+            border: 2px solid rgb(4, 100, 255);
+            width: 50%;
+        }
+    </style>
+</head>
+<body>
+    <%- include('navbar.ejs') %>
+    <form method="post" action="/home/addone" enctype="multipart/form-data" style="padding:5px; margin: 5rem; ">
+        <h1 style="text-align: center;">add new property</h1>
+      <div class="formbox">
+        <input type="text" placeholder="enter property name" name="Name" value="" required>
+      </div>
+      <div class="formbox">
+        <input type="number" placeholder="enter property rate" name="rate" value="" required>
+      </div>
+      <div class="formbox">
+        <input type="text" placeholder="enter size of property" name="size" value="" required>
+      </div>
+      <div class="formbox">
+          <input type="text" placeholder="additional information about property" name="additional" value="" required>
+      </div>
+      <div class="formbox">
+        <input type="text" placeholder="full location" name="location" value="" required>
+      </div>
+      <div class="formbox">
+          <select name="type" required>
+              <option selected>Property Type</option>
+              <option value="Office">Office</option>
+              <option value="Plot">Plot</option>
+              <option value="Land">Land</option>
+              <option value="House">House</option>
+          </select>
+      </div>
+      <div class="formbox">
+          <select name="SRB" required>
+              <option selected>Property Type</option>
+              <option value="for sale">for sale</option>
+              <option value="for rent">for rent</option>
+              <option value="for buy">for buy</option>
+          </select>
+      </div>
+      <div class="formbox">
+          <select name="area" required>
+              <option selected>area</option>
+              <option value="Abhinandan Nagar Road">Abhinandan Nagar Road</option>
+              <option value="Alok Nagar Row Houses">Alok Nagar Row Houses</option>
+              <option value="Annapurna Road">Annapurna Road</option>
+              <option value="Anoop Nagar">Anoop Nagar</option>
+              <option value="Ashish Nagar">Ashish Nagar</option>
+              <option value="Bairathi Colony">Bairathi Colony</option>
+              <option value="Bengali Square">Bengali Square</option>
+              <option value="Bhagirath Pura">Bhagirath Pura</option>
+              <option value="Bicholi Hapsi Road">Bicholi Hapsi Road</option>
+              <option value="Bicholi Mardana Road">Bicholi Mardana Road</option>
+              <option value="Bypass Road">Bypass Road</option>
+              <option value="Chhavni">Chhavni</option>
+              <option value="Dhar Road">Dhar Road</option>
+              <option value="Girdhar Nagar">Girdhar Nagar</option>
+              <option value="IDA Scheme 140">IDA Scheme 140</option>
+              <option value="Indore - Pithampur Road">Indore - Pithampur Road</option>
+              <option value="Jail Road">Jail Road</option>
+              <option value="Jawahar Marg">Jawahar Marg</option>
+              <option value="Kalindi Kunj">Kalindi Kunj</option>
+              <option value="Kalindi Mid Town">Kalindi Mid Town</option>
+              <option value="Kanadia Road">Kanadia Road</option>
+              <option value="Keshar Bagh Road">Keshar Bagh Road</option>
+              <option value="Khajrana Road">Khajrana Road</option>
+              <option value="Khajuri Bazaar">Khajuri Bazaar</option>
+              <option value="Khandwa Road">Khandwa Road</option>
+              <option value="Khatiwala Tank">Khatiwala Tank</option>
+              <option value="Lokmanya Nagar">Lokmanya Nagar</option>
+              <option value="Maanavta Nagar">Maanavta Nagar</option>
+              <option value="Manik Bagh Road">Manik Bagh Road</option>
+              <option value="Manishpuri">Manishpuri</option>
+              <option value="Manorama Ganj">Manorama Ganj</option>
+              <option value="MG Road">MG Road</option>
+              <option value="Morya Hills">Morya Hills</option>
+              <option value="MR 10 Road">MR 10 Road</option>
+              <option value="MTH Compound">MTH Compound</option>
+              <option value="Nai Duniya">Nai Duniya</option>
+              <option value="Nanda Nagar">Nanda Nagar</option>
+              <option value="New Palasia">New Palasia</option>
+              <option value="Nihalpur">Nihalpur</option>
+              <option value="Niranjanpur Circle">Niranjanpur Circle</option>
+              <option value="Old Palasia">Old Palasia</option>
+              <option value="Palakhedi">Palakhedi</option>
+              <option value="Pardesi Pura">Pardesi Pura</option>
+              <option value="Pipliya Road">Pipliya Road</option>
+              <option value="Pipliyahana Square">Pipliyahana Square</option>
+              <option value="Race Course Road">Race Course Road</option>
+              <option value="Rajendra Nagar">Rajendra Nagar</option>
+              <option value="Rajwada">Rajwada</option>
+              <option value="Rani Sati Gate">Rani Sati Gate</option>
+              <option value="Regional Park Road">Regional Park Road</option>
+              <option value="Ring Road">Ring Road</option>
+              <option value="RNT Marg">RNT Marg</option>
+              <option value="Sainath Colony">Sainath Colony</option>
+              <option value="Sanvid Nagar">Sanvid Nagar</option>
+              <option value="Sapna Sangeeta Road">Sapna Sangeeta Road</option>
+              <option value="Sarv Suvidha Nagar">Sarv Suvidha Nagar</option>
+              <option value="Scheme No.54">Scheme No.54</option>
+              <option value="Shiv Shakti Nagar Road">Shiv Shakti Nagar Road</option>
+              <option value="Shree Nagar Extension">Shree Nagar Extension</option>
+              <option value="Siyaganj">Siyaganj</option>
+              <option value="Sneh Nagar">Sneh Nagar</option>
+              <option value="Snehlataganj">Snehlataganj</option>
+              <option value="South Tukoganj">South Tukoganj</option>
+              <option value="Super Corridor">Super Corridor</option>
+              <option value="Telephone Nagar">Telephone Nagar</option>
+              <option value="Tilak Nagar Main Road">Tilak Nagar Main Road</option>
+              <option value="Tukoganj">Tukoganj</option>
+              <option value="Ujjain Road">Ujjain Road</option>
+              <option value="Vandana Nagar Main Road">Vandana Nagar Main Road</option>
+              <option value="Vijay Nagar">Vijay Nagar</option>
+              <option value="Vishnu Puri Colony">Vishnu Puri Colony</option>
+              <option value="White Church Colony">White Church Colony</option>
+
+          </select>
+      </div>
+      <div class="formbox">
+        <input type="file" name="image1" id="img" required>
+      </div>
+      
+      <div class="formbox">
+        <input type="file" name="image2" id="img" required>
+      </div>
+      
+      <div class="formbox">
+        <input type="file" name="image3" id="img" required>
+      </div>
+      
+      <div class="formbox">
+        <input type="file" name="image4" id="img" required>
+      </div>
+      
+      <div class="formbox">
+        <input type="file" name="image5" id="img" required>
+      </div>
+      
+      <div class="formbox">
+        <button>submit</button>
+      </div>
+    </form>
+</body>
+</html>
