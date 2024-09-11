@@ -221,7 +221,7 @@ th:nth-child(2), td:nth-child(2) {
 
             <% for(let i=0; i<property.images.length; i++){ %>
                 <div class="grid-item">
-                    <img src="<%= property.images[i] %>" alt="Image 2">
+                    <img src="<%= property.images[i] %>" alt="<%- property.type %> space for sale in <%- property.area %> indore" >
                 </div>
             <% } %>
         </div>

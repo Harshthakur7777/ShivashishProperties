@@ -3678,7 +3678,6 @@
   .navbar-brand {
     padding-top: 0.3125rem;
     padding-bottom: 0.3125rem;
-    margin-right: 1rem;
     font-size: 1.25rem;
     white-space: nowrap;
   }
@@ -6592,12 +6591,12 @@
     padding-left: 1rem !important;
   }
   .px-4 {
-    padding-right: 1.5rem !important;
-    padding-left: 1.5rem !important;
+    padding-right: 1rem !important;
+    padding-left: 1rem !important;
   }
   .px-5 {
-    padding-right: 3rem !important;
-    padding-left: 3rem !important;
+    padding-right: 1.5rem !important;
+    padding-left: 1.5rem !important;
   }
   .py-0 {
     padding-top: 0 !important;
@@ -10024,3 +10023,56 @@
     }
   }
   
+  .navbar-collapse {
+    flex-basis: auto !important;
+    flex-grow: 1;
+    justify-content: flex-start;
+    flex-wrap: nowrap !important; /* Prevent wrapping */
+}
+/* General navbar styles */
+.navbar-nav {
+  display: flex;
+  flex-direction: row; /* Ensures horizontal alignment */
+  justify-content: center; /* Center the items */
+}
+
+/* For screens less than 992px */
+/* General navbar styles */
+.navbar {
+  transition: all 0.3s; /* Ensure smooth transition */
+}
+
+/* Navbar links */
+.navbar-nav .nav-item {
+  margin: 0 15px; /* Adjust spacing between nav items */
+}
+
+/* For screens less than 992px */
+@media (max-width: 992px) {
+  .navbar-collapse {
+      display: block !important; /* Always show the navbar items */
+  }
+
+  .navbar-nav {
+      flex-direction: row; /* Keep items in a row */
+      justify-content: center; /* Center the items */
+      margin-top: 10px; /* Space between heading and navbar */
+  }
+  
+  /* Optional: Adjust navbar item spacing */
+  .navbar-nav .nav-item {
+      margin: 0 5px; /* Adjust spacing as needed */
+  }
+  @media (max-width: 991px) {
+    .navbar {
+        padding-left:-5px; /* Adjust padding if needed */
+        padding-right: 0; /* Adjust padding if needed */
+    }
+
+    /* Hide the toggler button */
+    .navbar-toggler {
+        display: none !important; /* Hide the toggler button */
+    }
+}
+}
+

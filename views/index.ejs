@@ -2,33 +2,8 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <title>Shivashish Properties</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
-
-    <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
-
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@700;800&display=swap" rel="stylesheet">
-    
-    <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-
-    <!-- Libraries Stylesheet -->
-    <link href="/lib/animate/animate.min.css" rel="stylesheet">
-    <link href="/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Template Stylesheet -->
-    <link href="/style.css" rel="stylesheet">
+    <%- include('head.ejs') %>
+   
 </head>
 
 <body>
@@ -47,24 +22,24 @@
         <div class="container-fluid header bg-white p-0">
             <div class="row g-0 align-items-center flex-column-reverse flex-md-row">
                 <div class="col-md-6 p-5 mt-lg-5">
-                    <h1 class="display-5 animated fadeIn mb-4" style="font-size:2.25rem;">Your Trusted Partner in <span class="text-primary">Buying, Selling, and Renting</span> Premium Plots, Offices, Lands, and Houses <span class="text-primary">in Indore.</span> </h1>
-                    <p class="animated fadeIn mb-4 pb-2" style="font-size: 1rem; color: black;">Shivashish Properties, based in the vibrant city of Indore, is your go-to destination for all your real estate needs.Trust Shivashish Properties to turn your real estate dreams into reality in one of India's fastest-growing cities.</p>
-                    <a href="" class="btn btn-primary py-3 px-5 me-3 animated fadeIn">Get Started</a>
+                    <h1 class="display-5 animated fadeIn mb-4" style="font-size:2.25rem;">Find the Best <span class="text-primary">Properties in Indore</span>  with <span class="text-primary">Shivashish Properties</span></h1>
+                    <p class="animated fadeIn mb-4 pb-2" style="font-size: 1rem; color: black;">Your Trusted Partner in <span class="text-primary">Buying, Selling, and Renting</span> Premium Plots, Offices, Lands, and Houses <span class="text-primary">in Indore.</span></p>
+                    <a href="/home" class="btn btn-primary py-3 px-5 me-3 animated fadeIn">Get Started</a>
                 </div>
                 <div class="col-md-6 animated fadeIn">
                     <div class="owl-carousel header-carousel">
                         <div class="owl-carousel-item">
-                            <img class="img-fluid" src="img/carousel-1.jpg" alt="">
+                            <img class="img-fluid" src="img/carousel-1.jpg" alt="House space for sale in Indore">
                         </div>
                         <div class="owl-carousel-item">
-                            <img class="img-fluid" src="img/carousel-2.jpg" alt="">
+                            <img class="img-fluid" src="img/carousel-2.jpg" alt="Office space for sale in Indore">
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <!-- Header End -->
-        <a href="/home/add">add</a>
+       
         <!-- Search Start -->
         <%- include("propertySearch.ejs") %>
         <!-- Search End -->
@@ -77,12 +52,12 @@
                     <h1 class="mb-3">Property Types</h1>
                     <p>Whether you're searching for the perfect plot to build your dream home, a strategic office space to grow your business, expansive lands for development, or a ready-to-move-in house, we have you covered</p>
                 </div>
-                <div class="row g-4">
+                <div class="row g-4 abc">
                     <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <a class="cat-item d-block bg-light text-center rounded p-3" href="/home/offices">
+                        <a class="cat-item d-block bg-light text-center rounded p-3" href="/home/offices-in-indore">
                             <div class="rounded p-4">
                                 <div class="icon mb-3">
-                                    <img class="img-fluid" src="img/icon-house.png" alt="Icon">
+                                    <img class="img-fluid" src="img/icon-house.png" alt="Office icon">
                                 </div>
                                 <h6>Office</h6>
                                 <span>123 Properties</span>
@@ -90,10 +65,10 @@
                         </a>
                     </div>
                     <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
-                        <a class="cat-item d-block bg-light text-center rounded p-3" href="/home/houses">
+                        <a class="cat-item d-block bg-light text-center rounded p-3" href="/home/houses-in-indore">
                             <div class="rounded p-4">
                                 <div class="icon mb-3">
-                                    <img class="img-fluid" src="img/icon-apartment.png" alt="Icon">
+                                    <img class="img-fluid" src="img/icon-apartment.png" alt="house Icon">
                                 </div>
                                 <h6>House</h6>
                                 <span>12 Properties</span>
@@ -101,10 +76,10 @@
                         </a>
                     </div>
                     <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
-                        <a class="cat-item d-block bg-light text-center rounded p-3" href="/home/lands">
+                        <a class="cat-item d-block bg-light text-center rounded p-3" href="/home/lands-in-indore">
                             <div class="rounded p-4">
                                 <div class="icon mb-3">
-                                    <img class="img-fluid" src="img/icon-house.png" alt="Icon">
+                                    <img class="img-fluid" src="img/icon-house.png" alt="plot Icon">
                                 </div>
                                 <h6>Lands</h6>
                                 <span>123 Properties</span>
@@ -112,10 +87,10 @@
                         </a>
                     </div>
                     <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
-                        <a class="cat-item d-block bg-light text-center rounded p-3" href="/home/plots">
+                        <a class="cat-item d-block bg-light text-center rounded p-3" href="/home/plots-in-indore">
                             <div class="rounded p-4">
                                 <div class="icon mb-3">
-                                    <img class="img-fluid" src="img/icon-housing.png" alt="Icon">
+                                    <img class="img-fluid" src="img/icon-housing.png" alt="Land Icon">
                                 </div>
                                 <h6>Plots</h6>
                                 <span>123 Properties</span>
@@ -168,88 +143,80 @@
                             <div class="col-lg-3 col-md-5 wow fadeInUp" data-wow-delay="0.5s">
                                 <div class="property-item rounded overflow-hidden">
                                     <div class="position-relative overflow-hidden">
-                                        <a href=""><img class="img-fluid" src="img/property-3.jpg" alt=""></a>
+                                        <a href="/home/offices-in-indore"><img class="img-fluid" src="/img/officeProperty1.jpeg" alt="Office space for sale in Indore" style="height: 225px; width: 300px;"></a>
                                         <div class="bg-primary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">For Sell</div>
                                         <div class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3">Office</div>
                                     </div>
                                     <div class="p-4 pb-0">
-                                        <h5 class="text-primary mb-3">$12,345</h5>
-                                        <a class="d-block h5 mb-2" href="">Golden Urban House For Sell</a>
-                                        <p><i class="fa fa-map-marker-alt text-primary me-2"></i>123 Street, New York, USA</p>
+                                        <h5 class="text-primary mb-3">Rs.3,07,20000 </h5>
+                                        <a class="d-block h5 mb-2" href="/home/offices-in-indore">Complete IT Company Office</a>
+                                        <p><i class="fa fa-map-marker-alt text-primary me-2"></i>Oppisite C21 Mall Vijay Nagar</p>
                                     </div>
                                     <div class="d-flex border-top">
-                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-ruler-combined text-primary me-2"></i>1000 Sqft</small>
-                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-bed text-primary me-2"></i>3 Bed</small>
-                                        <small class="flex-fill text-center py-2"><i class="fa fa-bath text-primary me-2"></i>2 Bath</small>
+                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-ruler-combined text-primary me-2"></i>2560 Sqft</small>
                                     </div>
                                     <div class="col-12 text-center wow fadeInUp" data-wow-delay="0.1s">
-                                        <a class="btn btn-primary py-2 px-5" href="/home/offices">Browse More Offices</a>
+                                        <a class="btn btn-primary py-2 px-5" href="/home/offices-in-indore">Browse More Offices</a>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-5 wow fadeInUp" data-wow-delay="0.1s">
                                 <div class="property-item rounded overflow-hidden">
                                     <div class="position-relative overflow-hidden">
-                                        <a href=""><img class="img-fluid" src="img/property-4.jpg" alt=""></a>
+                                        <a href="/home/houses-in-indore"><img class="img-fluid" src="/img/royalhome.jpeg" alt="House for sale in Indore" style="height: 225px; width: 300px;"></a>
                                         <div class="bg-primary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">For Rent</div>
-                                        <div class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3">Building</div>
+                                        <div class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3">House</div>
                                     </div>
                                     <div class="p-4 pb-0">
-                                        <h5 class="text-primary mb-3">$12,345</h5>
-                                        <a class="d-block h5 mb-2" href="">Golden Urban House For Sell</a>
-                                        <p><i class="fa fa-map-marker-alt text-primary me-2"></i>123 Street, New York, USA</p>
+                                        <h5 class="text-primary mb-3">Rs 2,00,000,000</h5>
+                                        <a class="d-block h5 mb-2" href="/home/houses-in-indore">Bonglow in Royal Recedency</a>
+                                        <p><i class="fa fa-map-marker-alt text-primary me-2"></i>Royal Recedency, greater brajeshwari, Indore</p>
                                     </div>
                                     <div class="d-flex border-top">
-                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-ruler-combined text-primary me-2"></i>1000 Sqft</small>
-                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-bed text-primary me-2"></i>3 Bed</small>
-                                        <small class="flex-fill text-center py-2"><i class="fa fa-bath text-primary me-2"></i>2 Bath</small>
+                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-ruler-combined text-primary me-2"></i>1457 Sqft</small>
                                     </div>
                                     <div class="col-12 text-center wow fadeInUp" data-wow-delay="0.1s">
-                                        <a class="btn btn-primary py-2 px-5" href="/home/houses">Browse More Houses</a>
+                                        <a class="btn btn-primary py-2 px-5" href="/home/houses-in-indore">Browse More Houses</a>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-5 wow fadeInUp" data-wow-delay="0.3s">
                                 <div class="property-item rounded overflow-hidden">
                                     <div class="position-relative overflow-hidden">
-                                        <a href=""><img class="img-fluid" src="img/property-5.jpg" alt=""></a>
+                                        <a href="/home/plots-in-indore"><img class="img-fluid" src="img/property-5.jpg" alt="Plot for sale in Indore" style="height: 225px; width: 300px;"></a>
                                         <div class="bg-primary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">For Sell</div>
                                         <div class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3">Home</div>
                                     </div>
                                     <div class="p-4 pb-0">
                                         <h5 class="text-primary mb-3">$12,345</h5>
-                                        <a class="d-block h5 mb-2" href="">Golden Urban House For Sell</a>
-                                        <p><i class="fa fa-map-marker-alt text-primary me-2"></i>123 Street, New York, USA</p>
+                                        <a class="d-block h5 mb-2" href="/home/plots-in-indore">Plot in greater brajeshwari</a>
+                                        <p><i class="fa fa-map-marker-alt text-primary me-2"></i>greater brijeshwari, pipliyahana, Indore</p>
                                     </div>
                                     <div class="d-flex border-top">
-                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-ruler-combined text-primary me-2"></i>1000 Sqft</small>
-                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-bed text-primary me-2"></i>3 Bed</small>
-                                        <small class="flex-fill text-center py-2"><i class="fa fa-bath text-primary me-2"></i>2 Bath</small>
+                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-ruler-combined text-primary me-2"></i>1500 sqft</small>
                                     </div>
                                     <div class="col-12 text-center wow fadeInUp" data-wow-delay="0.1s">
-                                        <a class="btn btn-primary py-2 px-5" href="/home/plots">Browse More Plots</a>
+                                        <a class="btn btn-primary py-2 px-5" href="/home/plots-in-indore">Browse More Plots</a>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-5 wow fadeInUp" data-wow-delay="0.5s">
                                 <div class="property-item rounded overflow-hidden">
                                     <div class="position-relative overflow-hidden">
-                                        <a href=""><img class="img-fluid" src="img/property-6.jpg" alt=""></a>
+                                        <a href="/home/lands-in-indore"><img class="img-fluid" src="img/property-6.jpg" alt="Land space for sale in Indore" style="height: 225px; width: 300px;"></a>
                                         <div class="bg-primary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">For Rent</div>
                                         <div class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3">Shop</div>
                                     </div>
                                     <div class="p-4 pb-0">
                                         <h5 class="text-primary mb-3">$12,345</h5>
-                                        <a class="d-block h5 mb-2" href="">Golden Urban House For Sell</a>
-                                        <p><i class="fa fa-map-marker-alt text-primary me-2"></i>123 Street, New York, USA</p>
+                                        <a class="d-block h5 mb-2" href="/home/lands-in-indore">Golden Urban House For Sell</a>
+                                        <p><i class="fa fa-map-marker-alt text-primary me-2"></i>123 Street,a-7 ,New York, USA</p>
                                     </div>
                                     <div class="d-flex border-top">
                                         <small class="flex-fill text-center border-end py-2"><i class="fa fa-ruler-combined text-primary me-2"></i>1000 Sqft</small>
-                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-bed text-primary me-2"></i>3 Bed</small>
-                                        <small class="flex-fill text-center py-2"><i class="fa fa-bath text-primary me-2"></i>2 Bath</small>
                                     </div>
                                     <div class="col-12 text-center wow fadeInUp" data-wow-delay="0.1s">
-                                        <a class="btn btn-primary py-2 px-5" href="/home/lands">Browse More Lands</a>
+                                        <a class="btn btn-primary py-2 px-5" href="/home/lands-in-indore">Browse More Lands</a>
                                     </div>
                                 </div>
                             </div>

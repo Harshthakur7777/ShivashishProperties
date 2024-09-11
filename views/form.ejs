@@ -18,6 +18,11 @@
             border: 2px solid rgb(4, 100, 255);
             width: 50%;
         }
+        @media (max-width: 575.98px) {
+         input,select{
+          width: 200px;
+         }
+    }
     </style>
 </head>
 <body>
@@ -143,20 +148,21 @@
       </div>
       
       <div class="formbox">
-        <input type="file" name="image3" id="img" required>
+        <input type="file" name="image3" id="img" >
       </div>
       
       <div class="formbox">
-        <input type="file" name="image4" id="img" required>
+        <input type="file" name="image4" id="img" >
       </div>
       
       <div class="formbox">
-        <input type="file" name="image5" id="img" required>
+        <input type="file" name="image5" id="img">
       </div>
       
       <div class="formbox">
         <button>submit</button>
       </div>
     </form>
+    <%- include('footer.ejs') %>
 </body>
 </html>

@@ -33,22 +33,22 @@ var houses = DataHouse.array
 router.get('/',(req,res,next)=>{
     res.render('index',{reviews})
 })
-router.get('/offices/:id',(req,res,next)=>{
+router.get('/offices-in-indore/:id',(req,res,next)=>{
     const { id }= req.params;
     const property = offices[id-1];
     res.render('show.ejs', {property});
 })
-router.get('/lands/:id',(req,res,next)=>{
+router.get('/lands-in-indore/:id',(req,res,next)=>{
     const { id }= req.params;
     const property = lands[id-1];
     res.render('show.ejs', {property});
 })
-router.get('/plots/:id',(req,res,next)=>{
+router.get('/plots-in-indore/:id',(req,res,next)=>{
     const { id }= req.params;
     const property = plots[id-1];
     res.render('show.ejs', {property});
 })
-router.get('/houses/:id',(req,res,next)=>{
+router.get('/houses-in-indore/:id',(req,res,next)=>{
     const { id }= req.params;
     const property = houses[id-1];
     res.render('show.ejs', {property});
@@ -104,23 +104,23 @@ router.post('/addone',uploads.fields([{name:'image1'},{name:'image2'},{name:'ima
 router.get('/reviews',(req,res,next)=>{
     res.render('reviews',{reviews})
 })
-router.get('/offices', (req,res,next)=>{
+router.get('/offices-in-indore', (req,res,next)=>{
     let property = offices
     res.render('offices', {property})
 })            
-router.get('/houses', (req,res,next)=>{
+router.get('/houses-in-indore', (req,res,next)=>{
     let property = houses;
     res.render('houses', {property})
 })
-router.get('/plots', (req,res,next)=>{
+router.get('/plots-in-indore', (req,res,next)=>{
     let property = plots
     res.render('plots', {property})    
 })
-router.get('/lands', (req,res,next)=>{
+router.get('/lands-in-indore', (req,res,next)=>{
     let property = lands;
     res.render('lands', {property})
 })
-router.get('/add', (req,res,next)=>{
+router.get('/add-in-indore', (req,res,next)=>{
     res.render('form')
 })
 router.get('/addreview', (req,res)=>{
@@ -142,9 +142,7 @@ router.post('/search', (req,res,next)=>{
     else if(prop=="House"){
         res.render('houses', {property})
     }
-    else{
-        res.send("not founds")
-    }
+   
 })
 function fun(prop,area){
     let arr = []

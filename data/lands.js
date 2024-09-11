@@ -3,7 +3,7 @@ exports.array = [
         index:2,
      Name:"New Plot no 25 26 23 in SKYy solance",
      SRB:"For Sale",
-     price:"2,50,00,000/begha",
+     rate:"2,50,00,000/begha",
      type:"land",
      area:"Scheme No 140",
      location :"jamniya khurd, near cricent water park, Indore" ,

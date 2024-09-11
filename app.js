@@ -11,8 +11,11 @@ app.use(express.static(path.join(__dirname,"public")))
 app.engine('ejs', ejsMate)
 const Home = require('./router/home')
 
-app.use('/home',Home);
 
+app.use('/home',Home);
+app.get('/',(req,res,next)=>{   
+    res.send('home')
+})
 app.get('/about',(req,res,next)=>{
     res.render('about')
 })
