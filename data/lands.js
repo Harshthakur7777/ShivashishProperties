@@ -1,6 +1,6 @@
 exports.array = [
     {
-        index:2,
+        index:1,
      Name:"New Plot no 25 26 23 in SKYy solance",
      SRB:"For Sale",
      rate:"2,50,00,000/begha",

@@ -35,21 +35,34 @@ router.get('/',(req,res,next)=>{
 })
 router.get('/offices-in-indore/:id',(req,res,next)=>{
     const { id }= req.params;
+    if(offices.length<id){
+        res.render('404')
+    }
     const property = offices[id-1];
     res.render('show.ejs', {property});
 })
 router.get('/lands-in-indore/:id',(req,res,next)=>{
+    
     const { id }= req.params;
+    if(lands.length<id){
+        res.render('404')
+    }
     const property = lands[id-1];
     res.render('show.ejs', {property});
 })
 router.get('/plots-in-indore/:id',(req,res,next)=>{
     const { id }= req.params;
+    if(plots.length<id){
+        res.render('404')
+    }
     const property = plots[id-1];
     res.render('show.ejs', {property});
 })
 router.get('/houses-in-indore/:id',(req,res,next)=>{
     const { id }= req.params;
+    if(houses.length<id){
+        res.render('404')
+    }
     const property = houses[id-1];
     res.render('show.ejs', {property});
 })
@@ -176,4 +189,7 @@ function fun(prop,area){
     }
     return arr;
 }
+router.all('*',(req,res,next)=>{
+    res.render('404')
+})
 module.exports = router;

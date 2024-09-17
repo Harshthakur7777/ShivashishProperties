@@ -9,12 +9,12 @@ exports.array = [
      location :"greater brijeshwari, pipliyahana, Indore" ,
      size:"1500 sqft ",
      sqft:"13000/sqft",
-     image:"https://media.istockphoto.com/id/1500037690/photo/empty-room-with-white-wall-background-living-room-3d-rendering.jpg?s=612x612&w=0&k=20&c=qTp1GF4sGj_eB_pPOPvPZaQ6fcmL94jbyDaxaR2yzqM=",
-     images:["https://media.istockphoto.com/id/1500037690/photo/empty-room-with-white-wall-background-living-room-3d-rendering.jpg?s=612x612&w=0&k=20&c=qTp1GF4sGj_eB_pPOPvPZaQ6fcmL94jbyDaxaR2yzqM="]  
+     image:"https://img.squareyards.com/secondaryPortal/638606256558020813-3008240240554055.jpg",
+     images:["https://img.squareyards.com/secondaryPortal/638606256558020813-3008240240554055.jpg"]  
     },
     {
      index:2,
-     Name:"New Plot no 25 26 23 in SKYy solance",
+     Name:"New Plot no 25 26 23 in SKY solance",
      SRB:"For Sale",
      rate:" ",
      type:"plot",
@@ -22,7 +22,7 @@ exports.array = [
      location :"greater brijeshwari, pipliyahana, Indore" ,
      size:"1170 sqft , 1150 sqft",
      sqft:"9000/sqft",
-     image:"https://media.istockphoto.com/id/1500037690/photo/empty-room-with-white-wall-background-living-room-3d-rendering.jpg?s=612x612&w=0&k=20&c=qTp1GF4sGj_eB_pPOPvPZaQ6fcmL94jbyDaxaR2yzqM=",
-     images:["https://media.istockphoto.com/id/1500037690/photo/empty-room-with-white-wall-background-living-room-3d-rendering.jpg?s=612x612&w=0&k=20&c=qTp1GF4sGj_eB_pPOPvPZaQ6fcmL94jbyDaxaR2yzqM="]  
+     image:"https://5.imimg.com/data5/SELLER/Default/2021/11/ED/QE/GJ/62650894/residential-plot-for-sale-in-lucknow-1000x1000.jpeg",
+     images:["https://5.imimg.com/data5/SELLER/Default/2021/11/ED/QE/GJ/62650894/residential-plot-for-sale-in-lucknow-1000x1000.jpeg"]  
     },
 ]

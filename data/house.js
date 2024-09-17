@@ -3,7 +3,7 @@ exports.array = [
          index:1,
          Name:"New Bonglow in Royal Recedency",
          SRB:"For Sale",
-         rate:" ",
+         rate:"2,50,00,000",
          type:"house",
          area:"Scheme No 140",
          location :"Royal Recedency, greater brajeshwari, Indore",

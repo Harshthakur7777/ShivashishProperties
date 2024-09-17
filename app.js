@@ -42,6 +42,9 @@ app.get('/contact',(req,res,next)=>{
 app.post('/addone',(req,res,next)=>{
     console.log(JSON.parse(req.body.name));
 })
+app.all('*', (req,res,next)=>{
+    res.render('404')
+})
 app.listen(8080,()=>{
     console.log('app is listening on port 8080')
 })
