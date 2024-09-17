@@ -1,7 +1,8 @@
 const express = require('express');
 const app = express();
 app.use(express.json());
- 
+var DataReview = require('./data/reviews')
+var reviews = DataReview.array;
 // For parsing application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: true }));
 const ejsMate = require('ejs-mate')
@@ -13,8 +14,9 @@ const Home = require('./router/home')
 
 
 app.use('/home',Home);
-app.get('/',(req,res,next)=>{   
-    res.send('home')
+
+app.get('/',(req,res,next)=>{
+    res.render('index',{reviews})
 })
 app.get('/about',(req,res,next)=>{
     res.render('about')
@@ -45,6 +47,7 @@ app.post('/addone',(req,res,next)=>{
 app.all('*', (req,res,next)=>{
     res.render('404')
 })
+
 app.listen(8080,()=>{
     console.log('app is listening on port 8080')
 })

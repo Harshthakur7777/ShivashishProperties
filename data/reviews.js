@@ -1,5 +1,5 @@
 exports.array = [{
-    name:"Vivek Gupta",
+    name:"Nisha Sharma",
     content:"I got my new house with the help of shivashish properties. Thanks You",
     image:"/img/testimonial-1.jpg",
     profession: "Teacher" 
@@ -11,7 +11,7 @@ exports.array = [{
      profession: "Teacher" 
    },
    {
-     name:"Vivek Gupta",
+     name:"Lalit patidar",
      content:"I got my new house with the help of shivashish properties. Thanks You",
      image:"/img/testimonial-3.jpg",
      profession: "Teacher" 
