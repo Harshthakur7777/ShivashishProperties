@@ -4,165 +4,348 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <%- include('head.ejs') %>
     <style>
-        .formbox
-        {   
-            text-align: center;
-            padding: 5px;
-            margin: 5px;
+       body{
+        color: #000;overflow-x: 
+        hidden;height: 100%;
+        background-image: url("https://i.imgur.com/GMmCQHC.png");
+        background-repeat: no-repeat;background-size: 100% 100%
         }
-        input,select{
-            font-size: large;
-            border-radius: 5%;
-            border: 2px solid rgb(4, 100, 255);
-            width: 50%;
+      .card{
+        padding: 30px 40px;
+        margin-top: 60px;
+        margin-bottom: 60px;
+        border: none !important;
+        box-shadow: 0 6px 12px 0 rgba(0,0,0,0.2)
         }
-        @media (max-width: 575.98px) {
-         input,select{
-          width: 200px;
-         }
+    .blue-text{color: #00BCD4}
+    .form-control-label{margin-bottom: 0}
+    input, textarea, .extraclass button{
+        padding: 8px 15px;
+        border-radius: 5px !important;
+        margin: 5px 0px;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        font-size: 18px !important;
+        font-weight: 300
     }
+    input:focus, textarea:focus{
+        -moz-box-shadow: none !important;
+        -webkit-box-shadow: none !important;
+        box-shadow: none !important;
+        border: 1px solid #00BCD4;
+        outline-width: 0;font-weight: 400
+    }
+    .btn-block{
+        text-transform: uppercase;
+        font-size: 15px !important;
+        font-weight: 400;
+        height: 43px;
+        cursor: pointer
+    }
+    .btn-block:hover{
+        color: #fff !important
+    }
+    .extraclass button:focus{
+        -moz-box-shadow: none !important;
+        -webkit-box-shadow: none !important;
+        box-shadow: none !important;
+        outline-width: 0
+    }
+
     </style>
 </head>
 <body>
-    <%- include('navbar.ejs') %>
-    <form method="post" action="/home/addone" enctype="multipart/form-data" style="padding:5px; margin: 5rem; ">
-        <h1 style="text-align: center;">add new property</h1>
-      <div class="formbox">
-        <input type="text" placeholder="enter property name" name="Name" value="" required>
-      </div>
-      <div class="formbox">
-        <input type="number" placeholder="enter property rate" name="rate" value="" required>
-      </div>
-      <div class="formbox">
-        <input type="text" placeholder="enter size of property" name="size" value="" required>
-      </div>
-      <div class="formbox">
-          <input type="text" placeholder="additional information about property" name="additional" value="" required>
-      </div>
-      <div class="formbox">
-        <input type="text" placeholder="full location" name="location" value="" required>
-      </div>
-      <div class="formbox">
-          <select name="type" required>
-              <option selected>Property Type</option>
-              <option value="Office">Office</option>
-              <option value="Plot">Plot</option>
-              <option value="Land">Land</option>
-              <option value="House">House</option>
-          </select>
-      </div>
-      <div class="formbox">
-          <select name="SRB" required>
-              <option selected>Property Type</option>
-              <option value="for sale">for sale</option>
-              <option value="for rent">for rent</option>
-              <option value="for buy">for buy</option>
-          </select>
-      </div>
-      <div class="formbox">
-          <select name="area" required>
-              <option selected>area</option>
-              <option value="Abhinandan Nagar Road">Abhinandan Nagar Road</option>
-              <option value="Alok Nagar Row Houses">Alok Nagar Row Houses</option>
-              <option value="Annapurna Road">Annapurna Road</option>
-              <option value="Anoop Nagar">Anoop Nagar</option>
-              <option value="Ashish Nagar">Ashish Nagar</option>
-              <option value="Bairathi Colony">Bairathi Colony</option>
-              <option value="Bengali Square">Bengali Square</option>
-              <option value="Bhagirath Pura">Bhagirath Pura</option>
-              <option value="Bicholi Hapsi Road">Bicholi Hapsi Road</option>
-              <option value="Bicholi Mardana Road">Bicholi Mardana Road</option>
-              <option value="Bypass Road">Bypass Road</option>
-              <option value="Chhavni">Chhavni</option>
-              <option value="Dhar Road">Dhar Road</option>
-              <option value="Girdhar Nagar">Girdhar Nagar</option>
-              <option value="IDA Scheme 140">IDA Scheme 140</option>
-              <option value="Indore - Pithampur Road">Indore - Pithampur Road</option>
-              <option value="Jail Road">Jail Road</option>
-              <option value="Jawahar Marg">Jawahar Marg</option>
-              <option value="Kalindi Kunj">Kalindi Kunj</option>
-              <option value="Kalindi Mid Town">Kalindi Mid Town</option>
-              <option value="Kanadia Road">Kanadia Road</option>
-              <option value="Keshar Bagh Road">Keshar Bagh Road</option>
-              <option value="Khajrana Road">Khajrana Road</option>
-              <option value="Khajuri Bazaar">Khajuri Bazaar</option>
-              <option value="Khandwa Road">Khandwa Road</option>
-              <option value="Khatiwala Tank">Khatiwala Tank</option>
-              <option value="Lokmanya Nagar">Lokmanya Nagar</option>
-              <option value="Maanavta Nagar">Maanavta Nagar</option>
-              <option value="Manik Bagh Road">Manik Bagh Road</option>
-              <option value="Manishpuri">Manishpuri</option>
-              <option value="Manorama Ganj">Manorama Ganj</option>
-              <option value="MG Road">MG Road</option>
-              <option value="Morya Hills">Morya Hills</option>
-              <option value="MR 10 Road">MR 10 Road</option>
-              <option value="MTH Compound">MTH Compound</option>
-              <option value="Nai Duniya">Nai Duniya</option>
-              <option value="Nanda Nagar">Nanda Nagar</option>
-              <option value="New Palasia">New Palasia</option>
-              <option value="Nihalpur">Nihalpur</option>
-              <option value="Niranjanpur Circle">Niranjanpur Circle</option>
-              <option value="Old Palasia">Old Palasia</option>
-              <option value="Palakhedi">Palakhedi</option>
-              <option value="Pardesi Pura">Pardesi Pura</option>
-              <option value="Pipliya Road">Pipliya Road</option>
-              <option value="Pipliyahana Square">Pipliyahana Square</option>
-              <option value="Race Course Road">Race Course Road</option>
-              <option value="Rajendra Nagar">Rajendra Nagar</option>
-              <option value="Rajwada">Rajwada</option>
-              <option value="Rani Sati Gate">Rani Sati Gate</option>
-              <option value="Regional Park Road">Regional Park Road</option>
-              <option value="Ring Road">Ring Road</option>
-              <option value="RNT Marg">RNT Marg</option>
-              <option value="Sainath Colony">Sainath Colony</option>
-              <option value="Sanvid Nagar">Sanvid Nagar</option>
-              <option value="Sapna Sangeeta Road">Sapna Sangeeta Road</option>
-              <option value="Sarv Suvidha Nagar">Sarv Suvidha Nagar</option>
-              <option value="Scheme No.54">Scheme No.54</option>
-              <option value="Shiv Shakti Nagar Road">Shiv Shakti Nagar Road</option>
-              <option value="Shree Nagar Extension">Shree Nagar Extension</option>
-              <option value="Siyaganj">Siyaganj</option>
-              <option value="Sneh Nagar">Sneh Nagar</option>
-              <option value="Snehlataganj">Snehlataganj</option>
-              <option value="South Tukoganj">South Tukoganj</option>
-              <option value="Super Corridor">Super Corridor</option>
-              <option value="Telephone Nagar">Telephone Nagar</option>
-              <option value="Tilak Nagar Main Road">Tilak Nagar Main Road</option>
-              <option value="Tukoganj">Tukoganj</option>
-              <option value="Ujjain Road">Ujjain Road</option>
-              <option value="Vandana Nagar Main Road">Vandana Nagar Main Road</option>
-              <option value="Vijay Nagar">Vijay Nagar</option>
-              <option value="Vishnu Puri Colony">Vishnu Puri Colony</option>
-              <option value="White Church Colony">White Church Colony</option>
 
-          </select>
+    <div class="container-fluid nav-bar bg-transparent"> 
+        <nav class="navbar navbar-expand-lg bg-white navbar-light py-0 px-4">
+            <a href="/home" class="navbar-brand d-flex align-items-center text-center">
+                <div class="icon p-2 me-2">
+                    <img class="img-fluid" src="/img/icon-deal.png" alt="Property Icon" style="width: 30px; height: 30px;">
+                </div>
+                <h1 class="m-0 text-primary">Shivashish Properties</h1>
+            </a>
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto">
+                    <a href="/home" class="nav-item nav-link ">Home</a>
+                    <a href="/home/sell" class="nav-item nav-link active">Sell</a>
+                    <div class="nav-item dropdown">
+                        <a href="/home" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Property</a>
+                        <div class="dropdown-menu rounded-0 m-0">
+                            <a href="/home/offices-in-indore" class="dropdown-item">office</a>
+                            <a href="/home/lands-in-indore" class="dropdown-item">land</a>
+                            <a href="/home/plots-in-indore" class="dropdown-item">plot</a>
+                            <a href="/home/houses-in-indore" class="dropdown-item">house</a>
+                        </div>
+                    </div>
+                    <a href="/home/reviews" class="nav-item nav-link">Reviews</a>
+    
+                    <% if(!currUser) { %>
+                        <a href="/user/login" class="nav-item nav-link">
+                            <button type="button" class="btn btn-primary btn-sm">Login</button>
+                        </a>
+                    <% } else { %>
+                        <div class="nav-item dropdown" style="padding-top: 20px">
+                            <button class="btn btn-secondary dropdown-toggle btn-sm" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <%= currUser.username %>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="/user/<%=currUser._id %>">Profile</a></li>
+                                <li><a class="dropdown-item" href="/user/logout" onclick="confirmLogout(event)">Logout</a></li>
+                            </ul>
+                        </div>
+                    <% } %>   
+                </div>
+            </div>
+        </nav>
+    </div>
+    <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    
+</nav>
+<%- include('flash.ejs') %>
+</div>
+
+<!-- Navbar End -->
+    <div class="extraclass container-fluid px-1 py-5 mx-auto">
+      <div class="row d-flex justify-content-center">
+          <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
+              <h3>Sell a Property</h3>
+              <p class="blue-text">Fill in the details of property to sell.</p>
+              <div class="card">
+                  <h5 class="text-center mb-4">Property Details</h5>
+                  <form class="form-card" method="post" action="/home/addproperty" enctype="multipart/form-data">
+                      <div class="row justify-content-between text-left">
+                          <div class="form-group col-sm-6 flex-column d-flex">
+                              <label class="form-control-label px-3">Property Name<span class="text-danger"> *</span></label>
+                              <input type="text" id="name" name="Name" placeholder="Enter property name" required>
+                          </div>
+                          <div class="form-group col-sm-6 flex-column d-flex">
+                              <label class="form-control-label px-3">Rate<span class="text-danger"> *</span></label>
+                              <input type="number" id="rate" name="rate" placeholder="Enter property rate" required>
+                          </div>
+                      </div>
+                      <div class="row justify-content-between text-left">
+                          <div class="form-group col-sm-6 flex-column d-flex">
+                              <label class="form-control-label px-3">Size<span class="text-danger"> *</span></label>
+                              <input type="text" id="size" name="size" placeholder="Enter size of property" required>
+                          </div>
+                          <div class="form-group col-sm-6 flex-column d-flex">
+                              <label class="form-control-label px-3">Additional Info<span class="text-danger"> *</span></label>
+                              <input type="text" id="additional" name="additional" placeholder="Additional information" required>
+                          </div>
+                      </div>
+                      <div class="row justify-content-between text-left">
+                          <div class="form-group col-sm-12 flex-column d-flex">
+                              <label class="form-control-label px-3">Location<span class="text-danger"> *</span></label>
+                              <input type="text" id="location" name="location" placeholder="Full location" required>
+                          </div>
+                      </div>
+                      <div class="row justify-content-between text-left">
+                          <div class="form-group col-sm-6 flex-column d-flex">
+                              <label class="form-control-label px-3">Property Type<span class="text-danger"> *</span></label>
+                              <select id="type" name="type" required>
+                                  <option selected disabled>Choose property type</option>
+                                  <option value="office">office</option>
+                                  <option value="plot">plot</option>
+                                  <option value="land">land</option>
+                                  <option value="house">house</option>
+                              </select>
+                          </div>
+                          <div class="form-group col-sm-6 flex-column d-flex">
+                              <label class="form-control-label px-3">Purpose<span class="text-danger"> *</span></label>
+                              <select id="SRB" name="SRB" required>
+                                  <option selected disabled>Choose purpose</option>
+                                  <option value="for sale">For Sale</option>
+                                  <option value="for rent">For Rent</option>
+                                  <option value="for buy">For Buy</option>
+                              </select>
+                          </div>
+                      </div>
+                      <div class="row justify-content-between text-left">
+                          <div class="form-group col-sm-12 flex-column d-flex">
+                              <label class="form-control-label px-3">Area<span class="text-danger"> *</span></label>
+                              <select id="area" name="area" >
+                                  <option selected disabled required>Select area</option>
+                                  <option value="Abhinandan Nagar Road">Abhinandan Nagar Road</option>
+                            <option value="Alok Nagar Row Houses">Alok Nagar Row Houses</option>
+                            <option value="Annapurna Road">Annapurna Road</option>
+                            <option value="Anoop Nagar">Anoop Nagar</option>
+                            <option value="Ashish Nagar">Ashish Nagar</option>
+                            <option value="Bairathi Colony">Bairathi Colony</option>
+                            <option value="Bengali Square">Bengali Square</option>
+                            <option value="Bhagirath Pura">Bhagirath Pura</option>
+                            <option value="Bicholi Hapsi Road">Bicholi Hapsi Road</option>
+                            <option value="Bicholi Mardana Road">Bicholi Mardana Road</option>
+                            <option value="Bypass Road">Bypass Road</option>
+                            <option value="Chhavni">Chhavni</option>
+                            <option value="Dhar Road">Dhar Road</option>
+                            <option value="Girdhar Nagar">Girdhar Nagar</option>
+                            <option value="IDA Scheme 140">IDA Scheme 140</option>
+                            <option value="Indore - Pithampur Road">Indore - Pithampur Road</option>
+                            <option value="Jail Road">Jail Road</option>
+                            <option value="Jamniya">Jamniya</option>
+                            <option value="Jawahar Marg">Jawahar Marg</option>
+                            <option value="Kalindi Kunj">Kalindi Kunj</option>
+                            <option value="Kalindi Mid Town">Kalindi Mid Town</option>
+                            <option value="Kanadia Road">Kanadia Road</option>
+                            <option value="Keshar Bagh Road">Keshar Bagh Road</option>
+                            <option value="Khajrana Road">Khajrana Road</option>
+                            <option value="Khajuri Bazaar">Khajuri Bazaar</option>
+                            <option value="Khandwa Road">Khandwa Road</option>
+                            <option value="Khatiwala Tank">Khatiwala Tank</option>
+                            <option value="Lokmanya Nagar">Lokmanya Nagar</option>
+                            <option value="Maanavta Nagar">Maanavta Nagar</option>
+                            <option value="Manik Bagh Road">Manik Bagh Road</option>
+                            <option value="Manishpuri">Manishpuri</option>
+                            <option value="Manorama Ganj">Manorama Ganj</option>
+                            <option value="MG Road">MG Road</option>
+                            <option value="Morya Hills">Morya Hills</option>
+                            <option value="MR 10 Road">MR 10 Road</option>
+                            <option value="MTH Compound">MTH Compound</option>
+                            <option value="Nai Duniya">Nai Duniya</option>
+                            <option value="Nanda Nagar">Nanda Nagar</option>
+                            <option value="New Palasia">New Palasia</option>
+                            <option value="Nihalpur">Nihalpur</option>
+                            <option value="Niranjanpur Circle">Niranjanpur Circle</option>
+                            <option value="Old Palasia">Old Palasia</option>
+                            <option value="Palakhedi">Palakhedi</option>
+                            <option value="Pardesi Pura">Pardesi Pura</option>
+                            <option value="Pipliya Road">Pipliya Road</option>
+                            <option value="Pipliyahana Square">Pipliyahana Square</option>
+                            <option value="Pipliyahana Square">Rau</option>
+                            <option value="Race Course Road">Race Course Road</option>
+                            <option value="Rajendra Nagar">Rajendra Nagar</option>
+                            <option value="Rajwada">Rajwada</option>
+                            <option value="Rani Sati Gate">Rani Sati Gate</option>
+                            <option value="Regional Park Road">Regional Park Road</option>
+                            <option value="Ring Road">Ring Road</option>
+                            <option value="RNT Marg">RNT Marg</option>
+                            <option value="Sainath Colony">Sainath Colony</option>
+                            <option value="Sanvid Nagar">Sanvid Nagar</option>
+                            <option value="Sapna Sangeeta Road">Sapna Sangeeta Road</option>
+                            <option value="Sarv Suvidha Nagar">Sarv Suvidha Nagar</option>
+                            <option value="Scheme No.54">Scheme No.54</option>
+                            <option value="Shiv Shakti Nagar Road">Shiv Shakti Nagar Road</option>
+                            <option value="Shree Nagar Extension">Shree Nagar Extension</option>
+                            <option value="Siyaganj">Siyaganj</option>
+                            <option value="Sneh Nagar">Sneh Nagar</option>
+                            <option value="Snehlataganj">Snehlataganj</option>
+                            <option value="South Tukoganj">South Tukoganj</option>
+                            <option value="Super Corridor">Super Corridor</option>
+                            <option value="Telephone Nagar">Telephone Nagar</option>
+                            <option value="Tilak Nagar Main Road">Tilak Nagar Main Road</option>
+                            <option value="Tukoganj">Tukoganj</option>
+                            <option value="Ujjain Road">Ujjain Road</option>
+                            <option value="Vandana Nagar Main Road">Vandana Nagar Main Road</option>
+                            <option value="Vijay Nagar">Vijay Nagar</option>
+                            <option value="Vishnu Puri Colony">Vishnu Puri Colony</option>
+                            <option value="White Church Colony">White Church Colony</option>
+
+                                  <!-- Add other area options here -->
+                              </select>
+                          </div>
+                      </div>
+                      <div class="row justify-content-between text-left">
+                        <div class="form-group col-sm-12 flex-column d-flex">
+                          <label class="form-control-label px-3">Upload Main Image of property<span class="text-danger"> *</span></label>
+                          <input type="file" name="image" id="image" required>
+                      </div>
+                      <div class="row justify-content-between text-left">
+                        <div class="form-group col-sm-12 flex-column d-flex">
+                          <label class="form-control-label px-3">Upload all Images<span class="text-danger"> *</span></label>
+                          <input type="file" name="images" id="images" multiple required>
+                      </div>
+                      
+                      </div>
+                      <div class="row justify-content-end">
+                          <div class="form-group col-sm-6">
+                              <button type="submit" class="btn-block btn-primary">Submit</button>
+                          </div>
+                      </div>
+                  </form>
+              </div>
+          </div>
       </div>
-      <div class="formbox">
-        <input type="file" name="image1" id="img" required>
-      </div>
-      
-      <div class="formbox">
-        <input type="file" name="image2" id="img" required>
-      </div>
-      
-      <div class="formbox">
-        <input type="file" name="image3" id="img" >
-      </div>
-      
-      <div class="formbox">
-        <input type="file" name="image4" id="img" >
-      </div>
-      
-      <div class="formbox">
-        <input type="file" name="image5" id="img">
-      </div>
-      
-      <div class="formbox">
-        <button>submit</button>
-      </div>
-    </form>
+  </div>
+  <%- include('allscripts.ejs') %>
+
     <%- include('footer.ejs') %>
 </body>
+<script>
+  function validate(val) {
+    const v1 = document.getElementById("name");
+    const v2 = document.getElementById("rate");
+    const v3 = document.getElementById("size");
+    const v4 = document.getElementById("location");
+    const v5 = document.getElementById("type");
+    const v6 = document.getElementById("SRB");
+    const v7 = document.getElementById("area");
+    const v8 = document.getElementById("img1");
+
+    let flag1 = true;
+    let flag2 = true;
+    let flag3 = true;
+    let flag4 = true;
+    let flag5 = true;
+    let flag6 = true;
+    let flag7 = true;
+    let flag8 = true;
+
+    if (val >= 1 || val == 0) {
+        if (v1.value.trim() === "") {
+            v1.style.borderColor = "red";
+            flag1 = false;
+        } else {
+            v1.style.borderColor = "green";
+            flag1 = true;
+        }
+    }
+
+    if (val >= 2 || val == 0) {
+        if (v2.value.trim() === "" || isNaN(v2.value)) {
+            v2.style.borderColor = "red";
+            flag2 = false;
+        } else {
+            v2.style.borderColor = "green";
+            flag2 = true;
+        }
+    }
+
+    if (val >= 3 || val == 0) {
+        if (v3.value.trim() === "") {
+            v3.style.borderColor = "red";
+            flag3 = false;
+        } else {
+            v3.style.borderColor = "green";
+            flag3 = true;
+        }
+    }
+
+    if (val >= 4 || val == 0) {
+        if (v4.value.trim() === "") {
+        }
+      }
+    }           
+</script>
 </html>
+<script>
+    function confirmLogout(event) {
+      // Show confirmation alert
+      event.preventDefault()
+      const confirmation = confirm("Are you sure you want to logout?");
+      
+      if (confirmation) {
+        // If user clicks "Yes", proceed with logout
+        window.location.href = "/user/logout";  // Redirect to logout route
+      } else {
+        // If user clicks "No", do nothing
+        return;
+      }
+    }
+  </script>

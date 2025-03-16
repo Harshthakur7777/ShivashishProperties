@@ -2,7 +2,7 @@
     <nav class="navbar navbar-expand-lg bg-white navbar-light py-0 px-4">
         <a href="/home" class="navbar-brand d-flex align-items-center text-center">
             <div class="icon p-2 me-2">
-                <img class="img-fluid" src="/img/icon-deal.png" alt="Poprty Icon" style="width: 30px; height: 30px;">
+                <img class="img-fluid" src="/img/icon-deal.png" alt="Property Icon" style="width: 30px; height: 30px;">
             </div>
             <h1 class="m-0 text-primary">Shivashish Properties</h1>
         </a>
@@ -16,15 +16,46 @@
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Property</a>
                     <div class="dropdown-menu rounded-0 m-0">
-                        <a href="/home/offices-in-indore" class="dropdown-item">Office</a>
-                        <a href="/home/lands-in-indore" class="dropdown-item">Lands</a>
-                        <a href="/home/plots-in-indore" class="dropdown-item">Plots</a>
-                        <a href="/home/houses-in-indore" class="dropdown-item">Houses</a>
+                        <a href="/home/offices-in-indore" class="dropdown-item">office</a>
+                        <a href="/home/lands-in-indore" class="dropdown-item">land</a>
+                        <a href="/home/plots-in-indore" class="dropdown-item">plot</a>
+                        <a href="/home/houses-in-indore" class="dropdown-item">house</a>
                     </div>
                 </div>
                 <a href="/home/reviews" class="nav-item nav-link">Reviews</a>
-                <a href="/contact" class="nav-item nav-link">Contact</a>
+
+                <% if(!currUser) { %>
+                    <a href="/user/login" class="nav-item nav-link">
+                        <button type="button" class="btn btn-primary btn-sm">Login</button>
+                    </a>
+                <% } else { %>
+                    <div class="nav-item dropdown" style="padding-top: 20px">
+                        <button class="btn btn-secondary dropdown-toggle btn-sm" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <%= currUser.username %>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/user/profile">Profile</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="confirmLogout()">Logout</a></li>
+                        </ul>
+                    </div>
+                <% } %>   
             </div>
         </div>
     </nav>
 </div>
+
+<!-- JavaScript for confirmation dialog -->
+<script>
+  function confirmLogout() {
+    // Show confirmation alert
+    const confirmation = confirm("Are you sure you want to logout?");
+    
+    if (confirmation) {
+      // If user clicks "Yes", proceed with logout
+      window.location.href = "/user/logout";  // Redirect to logout route
+    } else {
+      // If user clicks "No", do nothing
+      return;
+    }
+  }
+</script>

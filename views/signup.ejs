@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('head.ejs') %>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Apply the body styles only if there's no conflict */
+
+
+/* Container styling */
+.form-container {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    max-width: 400px;
+    margin: 40px auto; /* Center the form container */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+/* Heading styling */
+.form-container h1 {
+    text-align: center;
+    color: #2575fc;
+    margin-bottom: 25px;
+    font-size: 28px;
+    letter-spacing: 1.5px;
+}
+
+/* Form group styling */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    background-color: #f9f9f9;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #2575fc;
+    box-shadow: 0 0 8px rgba(37, 117, 252, 0.3);
+    outline: none;
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* File input styling */
+.file-input {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #f9f9f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hide the default file input */
+.file-input input[type="file"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Placeholder text styling */
+#filePlaceholder {
+    font-size: 16px;
+    color: #888;
+}
+
+/* File input focus state */
+.file-input input[type="file"]:focus + #filePlaceholder,
+.file-input input[type="file"]:hover + #filePlaceholder {
+    color: #2575fc;
+}
+
+/* When a file is selected, change the placeholder text */
+.file-input input[type="file"]:valid + #filePlaceholder {
+    color: #2575fc;
+    font-weight: bold;
+}
+
+/* Styling the file input container on hover */
+.file-input:hover {
+    border-color: #2575fc;
+    box-shadow: 0 0 8px rgba(37, 117, 252, 0.3);
+}
+
+/* Styling the file input container when active (file selected) */
+.file-input input[type="file"]:valid {
+    border-color: #28a745;
+    box-shadow: 0 0 8px rgba(40, 167, 69, 0.3);
+}
+
+/* Button styling */
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #2575fc;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #1a5bb8;
+    transform: translateY(-2px);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .form-container {
+        width: 90%;
+        margin: 20px auto;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    input[type="text"],
+    textarea {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    button {
+        font-size: 16px;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-container {
+        width: 95%;
+        margin: 20px auto;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    input[type="text"],
+    textarea {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 8px;
+    }
+}
+    </style>
+</head>
+<body>
+    <!-- Navbar Start -->
+    <div class="container-fluid nav-bar bg-transparent sticky-top"> 
+        <nav class="navbar navbar-expand-lg bg-white navbar-light py-0 px-4">
+            <a href="/home" class="navbar-brand d-flex align-items-center text-center">
+                <div class="icon p-2 me-2">
+                    <img class="img-fluid" src="/img/icon-deal.png" alt="Property Icon" style="width: 30px; height: 30px;">
+                </div>
+                <h1 class="m-0 text-primary">Shivashish Properties</h1>
+            </a>
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto">
+                    <a href="/home" class="nav-item nav-link">Home</a>
+                    <a href="/about" class="nav-item nav-link">About</a>
+                    <div class="nav-item dropdown">
+                        <a href="/home" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Property</a>
+                        <div class="dropdown-menu rounded-0 m-0">
+                            <a href="/home/offices-in-indore" class="dropdown-item">office</a>
+                            <a href="/home/lands-in-indore" class="dropdown-item">land</a>
+                            <a href="/home/plots-in-indore" class="dropdown-item">plot</a>
+                            <a href="/home/houses-in-indore" class="dropdown-item">house</a>
+                        </div>
+                    </div>
+                    <a href="/home/reviews" class="nav-item nav-link">Reviews</a>
+    
+                    <% if(!currUser) { %>
+                        <a href="/user/login" class="nav-item nav-link">
+                            <button type="button" class="btn btn-primary btn-sm">Login</button>
+                        </a>
+                    <% } else { %>
+                        <div class="nav-item dropdown" style="padding-top: 20px">
+                            <button class="btn btn-secondary dropdown-toggle btn-sm" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <%= currUser.username %>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="/user/profile">Profile</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="confirmLogout(event)">Logout</a></li>
+                            </ul>
+                        </div>
+                    <% } %>   
+                </div>
+            </div>
+        </nav>
+    </div>
+    
+    <!-- Navbar End -->
+    <%- include('flash.ejs') %>
+    <div class="form-container">
+        <h1>Sign Up</h1>
+        <form action="/user/signup" method="post">
+            <div class="form-group">
+                <input type="text" id="fullName" name="username" placeholder="Full Name" required>
+            </div>
+            <div class="form-group">
+                <input type="phone" id="phone" name="phone" placeholder="Mobile Number" required>
+            </div>
+            <div class="form-group">
+                <input type="email" id="email" name="email" placeholder="Gmail" required>
+            </div>
+            <div class="form-group">
+                <input type="password" name="password" placeholder="Password" id="password" required>
+            </div>
+            <button type="submit">Signup</button>
+        </form>
+    </div>
+    <%- include('footer.ejs') %>
+    <script>
+        const imageInput = document.getElementById('image');
+        const filePlaceholder = document.getElementById('filePlaceholder');
+
+        imageInput.addEventListener('change', function() {
+            if (imageInput.files.length > 0) {
+                filePlaceholder.textContent = imageInput.files[0].name;
+            } else {
+                filePlaceholder.textContent = "Add Your Photo";
+            }
+        });
+    </script>
+<%- include('allscripts.ejs') %>
+</body>
+</html>
+<script>
+    function confirmLogout(event) {
+      // Show confirmation alert
+      event.preventDefault();
+      const confirmation = confirm("Are you sure you want to logout?");
+      
+      if (confirmation) {
+        // If user clicks "Yes", proceed with logout
+        window.location.href = "/user/logout";  // Redirect to logout route
+      } else {
+        // If user clicks "No", do nothing
+        return;
+      }
+    }
+  </script>

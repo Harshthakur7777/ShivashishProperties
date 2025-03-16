@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('head.ejs') %>
+   
+</head>
+
+<body>
+    <%- include("flash.ejs") %> 
+    <div class="container-xxl bg-white p-0">
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+        <!-- Navbar Start -->
+        <div class="container-fluid nav-bar bg-transparent"> 
+            <nav class="navbar navbar-expand-lg bg-white navbar-light py-0 px-4">
+                <a href="/home" class="navbar-brand d-flex align-items-center text-center">
+                    <div class="icon p-2 me-2">
+                        <img class="img-fluid" src="/img/icon-deal.png" alt="Property Icon" style="width: 30px; height: 30px;">
+                    </div>
+                    <h1 class="m-0 text-primary">Shivashish Properties</h1>
+                </a>
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav ms-auto">
+                        <a href="/home" class="nav-item nav-link  active">Home</a>
+                        <a href="/about" class="nav-item nav-link">About</a>
+                        <div class="nav-item dropdown">
+                            <a href="/home" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Property</a>
+                            <div class="dropdown-menu rounded-0 m-0">
+                                <a href="/home/offices-in-indore" class="dropdown-item">office</a>
+                                <a href="/home/lands-in-indore" class="dropdown-item">land</a>
+                                <a href="/home/plots-in-indore" class="dropdown-item">plot</a>
+                                <a href="/home/houses-in-indore" class="dropdown-item">house</a>
+                            </div>
+                        </div>
+                        <a href="/home/reviews" class="nav-item nav-link">Reviews</a>
+        
+                        <% if(!currUser) { %>
+                            <a href="/user/login" class="nav-item nav-link">
+                                <button type="button" class="btn btn-primary btn-sm">Login</button>
+                            </a>
+                        <% } else { %>
+                            <div class="nav-item dropdown" style="padding-top: 20px">
+                                <button class="btn btn-secondary dropdown-toggle btn-sm" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <%= currUser.username %>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="/user/profile">Profile</a></li>
+                                    <li><a class="dropdown-item" href="#" onclick="confirmLogout()">Logout</a></li>
+                                </ul>
+                            </div>
+                        <% } %>   
+                    </div>
+                </div>
+            </nav>
+        </div>
+        
+        <!-- Navbar End -->
+        <div class="container"  style="margin-top: 50px; margin-bottom:50px ;">
+            <h1 class="text-center mb-4">
+                Admin Panel
+            </h1>
+            
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="card mb-3 border-primary">
+                        <button type="button" class="btn btn-primary">All Pending Requests</button>
+                    </div>
+                    <div class="card mb-3 border-danger">
+                        <button type="button" class="btn btn-primary">Delete a Property</button>
+                    </div>
+                    <div class="card mb-3 border-warning">
+                        <button type="button" class="btn btn-primary">Add a Property</button>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </div>    
+    <%- include('footer.ejs') %>
+</body>    
+<%- include("allscripts.ejs") %>
+</html>

@@ -5,15 +5,15 @@
             <p>Eirmod sed ipsum dolor sit rebum labore magna erat. Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed rebum vero dolor duo.</p>
         </div>
         <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
-            <% for(let i=0; i<reviews.length; i++){ %>
+            <% for(let i=0; i<indexData.reviews.length; i++){ %>
             <div class="testimonial-item bg-light rounded p-3">
                 <div class="bg-white border rounded p-4">
-                    <p><%= reviews[i].content %></p>
+                    <p><%= indexData.reviews[i].content %></p>
                     <div class="d-flex align-items-center">
-                        <img class="img-fluid flex-shrink-0 rounded" src="/img/testimonial-1.jpg" style="width: 45px; height: 45px;">
+                        <img class="img-fluid flex-shrink-0 rounded" src="<%= indexData.reviews[i].image %>" style="width: 45px; height: 45px;">
                         <div class="ps-3">
-                            <h6 class="fw-bold mb-1"><%= reviews[0].name %></h6>
-                            <small><%= reviews[0].name%></small>
+                            <h6 class="fw-bold mb-1"><%= indexData.reviews[i].name %></h6>
+                            <small><%= indexData.reviews[i].name%></small>
                         </div>
                     </div>
                 </div>

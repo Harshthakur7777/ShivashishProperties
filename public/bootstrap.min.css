@@ -10056,23 +10056,33 @@
   .navbar-nav {
       flex-direction: row; /* Keep items in a row */
       justify-content: center; /* Center the items */
-      margin-top: 10px; /* Space between heading and navbar */
+      /* Space between heading and navbar */
   }
   
   /* Optional: Adjust navbar item spacing */
   .navbar-nav .nav-item {
       margin: 0 5px; /* Adjust spacing as needed */
   }
-  @media (max-width: 991px) {
-    .navbar {
-        padding-left:-5px; /* Adjust padding if needed */
-        padding-right: 0; /* Adjust padding if needed */
-    }
-
-    /* Hide the toggler button */
-    .navbar-toggler {
-        display: none !important; /* Hide the toggler button */
-    }
 }
+@media (max-width: 991px) {
+  .navbar {
+      padding-left:-5px; /* Adjust padding if needed */
+      padding-right: 0; /* Adjust padding if needed */
+  }
+
+  /* Hide the toggler button */
+  .navbar-toggler {
+      display: none !important; /* Hide the toggler button */
+  }
 }
 
+.addnav{
+  padding-right: 1.5rem !important;
+  padding-left: 1.5rem !important;
+}
+@media (max-width:400px){
+  .addnav{
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+  } 
+}
