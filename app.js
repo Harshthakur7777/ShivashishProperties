@@ -83,5 +83,5 @@ app.all('*', (req,res,next)=>{
 })
 User.create()
 app.listen(8000,()=>{
-    console.log('app is listening on port 8080')
+    console.log('app is listening on port 8000')
 })
