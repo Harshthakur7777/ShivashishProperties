@@ -18,10 +18,14 @@ const mongoose = require("mongoose");
 const userRouter = require('./router/user')
 const User  = require('./models/user')
 const propertyModel = require('./models/propertyModel')
- const mongoURI = "mongodb://localhost:27017/shivashish"
- mongoose.connect(mongoURI)
- .then(() => console.log("MongoDB connected successfully"))
- .catch(err => console.log("MongoDB connection error:", err));
+ const mongoURI = "mongodb+srv://shivashishproperties:Incorrect%40321@cluster0.rg7cp.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+
+ mongoose.connect(mongoURI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => console.log("✅ MongoDB Connected Successfully"))
+  .catch(err => console.error("❌ MongoDB connection error:", err));
  const sessionOptions = {
     secret: 'your-secret-key', // Replace with a strong secret key
     resave: false, // Don't resave the session if it hasn't been modified
