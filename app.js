@@ -18,7 +18,7 @@ const mongoose = require("mongoose");
 const userRouter = require('./router/user')
 const User  = require('./models/user')
 const propertyModel = require('./models/propertyModel')
- const mongoURI = "mongodb+srv://shivashishproperties:Incorrect%40321@cluster0.rg7cp.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+ const mongoURI = "mongodb+srv://shivashishproperties:Incorrect%40321@cluster0.rg7cp.mongodb.net/shivashish?retryWrites=true&w=majority&appName=Cluster0"
 
  mongoose.connect(mongoURI, {
     useNewUrlParser: true,
