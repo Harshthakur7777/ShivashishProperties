@@ -49,7 +49,8 @@ const propertyModel = require('./models/propertyModel')
     res.locals.currUser = req.session.currUser;
     next();
   })
- 
+  
+
 
 
   // Middleware to set flash messages in the response locals
@@ -79,9 +80,7 @@ app.get('/addd', (req,res,next)=>{
     res.render('form.ejs')
 })
 
-app.post('/addone',(req,res,next)=>{
-    console.log(JSON.parse(req.body.name));
-})
+
 app.all('*', (req,res,next)=>{
     res.render('404')
 })

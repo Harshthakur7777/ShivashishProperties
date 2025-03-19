@@ -28,7 +28,10 @@ const userSchema = mongoose.Schema({
             message: props => 'Password must be between 8 and 16 characters long!'
         }
     },
-    image: { type: String, default: '/img/profile.png' }
+    image: { type: String, default: '/img/profile.png' },
+    usertype:{
+        type:String,default:'user'
+    }
 });
 
 userSchema.pre('save', async function (next) {

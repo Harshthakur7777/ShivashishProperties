@@ -13,22 +13,26 @@ module.exports.getHomePage = async(req,res,next)=>{
 module.exports.getAllOffices = async (req,res,next)=>{
     let property = await Property.find({type:'office'});
     property.head = 'Offices'
-    res.render('property', {property});
+    let user = res.locals.currUser
+    res.render('property', {property,user});
 }
 module.exports.getAllLands = async (req,res,next)=>{
     let property = await Property.find({type:'land'});
     property.head = 'Lands'
-    res.render('property', {property});
+    let user = res.locals.currUser
+    res.render('property', {property,user});
 }
 module.exports.getAllHouses = async (req,res,next)=>{
     let property = await Property.find({type:'house'});
     property.head = 'Houses'
-    res.render('property', {property});
+    let user = res.locals.currUser
+    res.render('property', {property,user});
 }
 module.exports.getAllPlots = async (req,res,next)=>{
     let property = await Property.find({type:'plot'});
     property.head = 'Plots'
-    res.render('property', {property});
+    let user = res.locals.currUser
+    res.render('property', {property,user});
 }
 module.exports.getOneProperty = async(req,res,next)=>{
     const { id }= req.params;
@@ -118,21 +122,23 @@ module.exports.addReviewForm =(req,res,next)=>{
 module.exports.searchProperty = async (req,res,next)=>{
     let prop= req.body.Property;
     let area = req.body.area;
+    
     if(prop=='Property Type' && area=='area'){
         req.flash('error','please select the type of property')
         res.redirect('/home')
     }
     else if(prop!='Property Type' && area=='area'){
-        console.log(prop)
+        
+        let user = res.locals.currUser
         let property = await Property.find({type:prop});    
-        console.log(property)
+        
         if(!property && !property[0].area){
             req.flash(`'error',${prop} is not available`)
             res.redirect('/home')
         }
         else{
             property.head = `All ${prop}s in Indore`;   
-            res.render('property',{property})
+            res.render('property',{property,user})
         }
     }
     else if(prop!='Property Type' && area!='area'){
@@ -143,19 +149,18 @@ module.exports.searchProperty = async (req,res,next)=>{
         }
         else{
             property.head = `All ${prop}s in ${property.area}`;
-            res.render('property',{property})
+            res.render('property',{property,user})
         }
     }
     else if(prop=='Property Type' && area!='area'){
         let property = await Property.find({area:area})
-        console.log(property)
         if(!property.area){
             req.flash('error',`Properties is not available in ${area}`)
             res.redirect('/home')
         }
         else{
         property.head= `All Properties in ${property.area}`;
-        res.render('property',{property})
+        res.render('property',{property,user})
         } 
     }
     

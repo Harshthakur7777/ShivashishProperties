@@ -208,7 +208,7 @@
                                 <small class="flex-fill text-center border-end py-2">
                                     <i class="fa fa-ruler-combined text-primary me-2"></i><%= properties[i].size %>
                                 </small>
-                                <form action="/user/<%= properties[i].userid %>/<%= properties[i]._id %>" method="post">
+                                <form action="/user/<%= property[i].userid %>/<%= property[i]._id %>" method="post" onsubmit="return confirmDelete()">
                                     <button style="background-color: red;">Delete</button>
                                 </form>
                             </div>
@@ -234,6 +234,11 @@
 </body>
 
 </html>
+<script>
+    function confirmDelete() {
+      return confirm("Are you sure you want to delete this property?");
+    }
+  </script>
 <script>
     function confirmLogout(event) {
       // Show confirmation alert

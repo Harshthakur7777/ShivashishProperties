@@ -67,7 +67,6 @@ module.exports.signUp = async (req, res, next) => {
       return res.render('otpver', { email });
 
   } catch (err) {
-      console.error("Sign-up error:", err);
       req.flash('error', 'Sign-up failed. Please try again.');
       return res.redirect('/user/signup');
   }
@@ -108,7 +107,6 @@ module.exports.verifyOtp = async (req, res, next) => {
 
       let user = await newUser.save(); // Save verified user
       delete otpStore[storedEmail]; // Clear OTP store after success
-      console.log(user)
       // ✅ Set session manually
       req.session.currUser = {
           _id: user._id,
@@ -120,7 +118,6 @@ module.exports.verifyOtp = async (req, res, next) => {
       return res.redirect('/home');
 
   } catch (err) {
-      console.error("Error in OTP verification:", err);
       req.flash('error', 'Error logging in');
       return res.redirect('/user/login');
   }
@@ -143,7 +140,6 @@ module.exports.getUserProfile= async(req,res,next)=>{
   let properties = [];
   properties=await Property.find({userid:id})
   const user = await User.findById(id);
-  console.log('user', user)
 
   res.render('profile',{ user , properties})
 }
