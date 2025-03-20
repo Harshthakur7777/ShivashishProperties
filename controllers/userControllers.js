@@ -10,8 +10,8 @@ module.exports.getLoginForm = async(req,res,next)=>{
     res.render('login')
 }
 module.exports.Login = async(req,res,next)=>{
-    let {phone,password} = req.body;
-    let user = await User.findOne({phone:phone})
+    let {email,password} = req.body;
+    let user = await User.findOne({email:email})
     if(user){
         const isMatch = await bcrypt.compare(password, user.passkey);
         if(isMatch){

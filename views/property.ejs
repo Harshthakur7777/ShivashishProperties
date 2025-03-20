@@ -97,7 +97,7 @@
                                     <div class="d-flex border-top">
                                         <small class="flex-fill text-center border-end py-2"><i class="fa fa-ruler-combined text-primary me-2"></i><%=property[i].size%></small>
                                     </div>
-                                    <% if(user.usertype == 'admin'){ %>
+                                    <% if(user && user.usertype == 'admin'){ %>
                                         <form action="/user/<%= property[i].userid %>/<%= property[i]._id %>" method="post" onsubmit="return confirmDelete()">
                                             <button style="background-color: red;">Delete</button>
                                         </form>
