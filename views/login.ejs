@@ -239,38 +239,7 @@ textarea {
     <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-        <div class="navbar-nav ms-auto">
-            <a href="/home" class="nav-item nav-link ">Home</a>
-            <a href="/home/sell" class="nav-item nav-link">Sell</a>
-            <div class="nav-item dropdown">
-                <a href="/home" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Property</a>
-                <div class="dropdown-menu rounded-0 m-0">
-                    <a href="/home/offices-in-indore" class="dropdown-item">office</a>
-                    <a href="/home/lands-in-indore" class="dropdown-item">land</a>
-                    <a href="/home/plots-in-indore" class="dropdown-item">plot</a>
-                    <a href="/home/houses-in-indore" class="dropdown-item">house</a>
-                </div>
-            </div>
-            <a href="/home/reviews" class="nav-item nav-link">Reviews</a>
-
-            <% if(!currUser) { %>
-                <a href="/user/login" class="nav-item nav-link">
-                    <button type="button" class="btn btn-primary btn-sm">Login</button>
-                </a>
-            <% } else { %>
-                <div class="nav-item dropdown" style="padding-top: 20px">
-                    <button class="btn btn-secondary dropdown-toggle btn-sm" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <%= currUser.username %>
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="/user/<%=currUser._id %>">Profile</a></li>
-                        <li><a class="dropdown-item" href="/user/logout" onclick="confirmLogout(event)">Logout</a></li>
-                    </ul>
-                </div>
-            <% } %>   
-        </div>
-    </div>
+    
 </nav>
 </div>
 
