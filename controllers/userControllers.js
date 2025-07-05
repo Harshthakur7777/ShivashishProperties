@@ -1,7 +1,7 @@
 const { generateOTP, sendOTP } = require('../utils/otp');
 const { ConversationRelay, ReferSip } = require('twilio/lib/twiml/VoiceResponse');
 const User = require('../models/user')
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const { saveUser, isLoggedin }= require('./../middleware')
 const OTP = require('./../utils/otp');
 const Property = require('../models/propertyModel');
@@ -37,7 +37,7 @@ module.exports.Login = async(req,res,next)=>{
 let otpStore= {};
 module.exports.signUp = async (req, res, next) => {
   try {
-      const bcrypt = require('bcrypt');
+      const bcrypt = require('bcryptjs');
       const { phone, username, email, password } = req.body;
 
       if (!email) return res.status(400).send({ message: 'Email is required.' });

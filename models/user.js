@@ -1,4 +1,4 @@
-const bcrypt = require('bcrypt')
+const bcrypt = require('bcryptjs')
 const mongoose = require('mongoose');
 const passportLocalMongoose = require('passport-local-mongoose');
 const userSchema = mongoose.Schema({
